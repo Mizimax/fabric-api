@@ -105,7 +105,6 @@ class ProductController extends Controller
     
       $res = json_decode(json_encode($res), true);
       $newRes = $res[0];
-      $newRes['house_image'] = url('/').$res[0]['house_image'];
       unset($newRes['product_id']);
       unset($newRes['product_name']);
       unset($newRes['product_limited']);
