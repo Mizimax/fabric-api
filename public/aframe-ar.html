@@ -1,0 +1,22 @@
+<!doctype HTML>
+<html>
+
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"> </script>
+
+
+<body style='margin : 0px; overflow: hidden; '>
+  <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+
+
+    <a-marker-camera type='pattern' url='pattern/house_1/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="yourvideo.mp4" crossorigin="anonymous"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
