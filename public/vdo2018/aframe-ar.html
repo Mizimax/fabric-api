@@ -1,0 +1,401 @@
+<!doctype HTML>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="./aframe-ar.js"></script>
+  <script>
+    AFRAME.registerComponent('registerevents', {
+      init: function () {
+        var marker = this.el;
+        // Make the element emit events when found and when lost.
+        marker.setAttribute('emitevents', 'true');
+        marker.addEventListener('markerFound', function (e) {
+          var markerId = marker.id;
+          console.log('markerFound', markerId);
+          var id = $(marker).children(':first').children(':first').attr('src');
+	  $(id)[0].play();
+          // TODO: Add your own code here to react to the marker being found.
+        });
+        marker.addEventListener('markerLost', function (e) {
+          var markerId = marker.id;
+          console.log('markerLost', markerId);
+          var id = $(marker).children(':first').children(':first').attr('src');
+          $(id)[0].pause();
+          // TODO: Add your own code here to react to the marker being lost.
+        });
+      }
+    });
+  </script>
+</head>
+
+
+<body style='margin : 0px; overflow: hidden; '>
+  <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.9' vr-mode-ui="enabled: false">
+
+    <a-assets>
+
+      <video muted src="../vdoar/01/1.mp4" id="vid_house_1_1"></video>
+      <video muted src="../vdoar/01/2.mp4" id="vid_house_1_2"></video>
+      <video muted src="../vdoar/02/1.mp4" id="vid_house_2_1"></video>
+      <video muted src="../vdoar/02/2.mp4" id="vid_house_2_2"></video>
+      <video muted src="../vdoar/02/3.mp4" id="vid_house_2_3"></video>
+      <video muted src="../vdoar/03/1.mp4" id="vid_house_3_1"></video>
+      <video muted src="../vdoar/03/2.mp4" id="vid_house_3_2"></video>
+      <video muted src="../vdoar/03/3.mp4" id="vid_house_3_3"></video>
+      <video muted src="../vdoar/04/1.mp4" id="vid_house_4_1"></video>
+      <video muted src="../vdoar/04/2.mp4" id="vid_house_4_2"></video>
+      <video muted src="../vdoar/04/3.mp4" id="vid_house_4_3"></video>
+      <video muted src="../vdoar/05/1.mp4" id="vid_house_5_1"></video>
+      <video muted src="../vdoar/06/1.mp4" id="vid_house_6_1"></video>
+      <video muted src="../vdoar/06/2.mp4" id="vid_house_6_2"></video>
+      
+      <video muted src="../vdoar/07/1.mp4" id="vid_house_7_1"></video>
+      <video muted src="../vdoar/07/2.mp4" id="vid_house_7_2"></video>
+      <video muted src="../vdoar/07/3.mp4" id="vid_house_7_3"></video>
+      <video muted src="../vdoar/08/1.mp4" id="vid_house_8_1"></video>
+      <video muted src="../vdoar/08/2.mp4" id="vid_house_8_2"></video>
+      <video muted src="../vdoar/08/3.mp4" id="vid_house_8_3"></video>
+      <video muted src="../vdoar/08/4.mp4" id="vid_house_8_4"></video>
+      <video muted src="../vdoar/09/1.mp4" id="vid_house_9_1"></video>
+      <video muted src="../vdoar/09/2.mp4" id="vid_house_9_2"></video>
+      <video muted src="../vdoar/09/3.mp4" id="vid_house_9_3"></video>
+      <video muted src="../vdoar/09/4.mp4" id="vid_house_9_4"></video>
+      <video muted src="../vdoar/10/1.mp4" id="vid_house_10_1"></video>
+      <video muted src="../vdoar/10/2.mp4" id="vid_house_10_2"></video>
+      <video muted src="../vdoar/11/1.mp4" id="vid_house_11_1"></video>
+      <video muted src="../vdoar/11/2.mp4" id="vid_house_11_2"></video>
+      <video muted src="../vdoar/11/3.mp4" id="vid_house_11_3"></video>
+      <video muted src="../vdoar/12/1.mp4" id="vid_house_12_1"></video>
+      <video muted src="../vdoar/12/2.mp4" id="vid_house_12_2"></video>
+      <video muted src="../vdoar/13/1.mp4" id="vid_house_13_1"></video>
+      <video muted src="../vdoar/14/1.mp4" id="vid_house_14_1"></video>
+      <video muted src="../vdoar/14/2.mp4" id="vid_house_14_2"></video>
+      <video muted src="../vdoar/15/1.mp4" id="vid_house_15_1"></video>
+      <video muted src="../vdoar/15/2.mp4" id="vid_house_15_2"></video>
+      <video muted src="../vdoar/15/3.mp4" id="vid_house_15_3"></video>
+      <video muted src="../vdoar/16/1.mp4" id="vid_house_16_1"></video>
+      <video muted src="../vdoar/16/2.mp4" id="vid_house_16_2"></video>
+      <video muted src="../vdoar/17/1.mp4" id="vid_house_17_1"></video>
+      <video muted src="../vdoar/17/2.mp4" id="vid_house_17_2"></video>
+      <video muted src="../vdoar/18/1.mp4" id="vid_house_18_1"></video>
+      <video muted src="../vdoar/18/2.mp4" id="vid_house_18_2"></video>
+      <video muted src="../vdoar/19/1.mp4" id="vid_house_19_1"></video>
+      <video muted src="../vdoar/19/2.mp4" id="vid_house_19_2"></video>
+      <video muted src="../vdoar/19/3.mp4" id="vid_house_19_3"></video>
+      <video muted src="../vdoar/19/4.mp4" id="vid_house_19_4"></video>
+      <video muted src="../vdoar/20/1.mp4" id="vid_house_20_1"></video>
+
+    </a-assets>
+
+    <a-marker id="house_1_pattern_1" registerevents type='pattern' url='./pattern/house_1/1.patt'>
+      <a-entity rotation="225 360 0">
+        <a-video muted src="#vid_house_1_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_1_pattern_2" registerevents type='pattern' url='./pattern/house_1/2.patt'>
+      <a-entity rotation="225 360 0">
+        <a-video muted src="#vid_house_1_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_2_pattern_1" registerevents type='pattern' url='./pattern/house_2/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_2_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_2_pattern_2" registerevents type='pattern' url='./pattern/house_2/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_2_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_2_pattern_3" registerevents type='pattern' url='./pattern/house_2/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_2_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_3_pattern_1" registerevents type='pattern' url='./pattern/house_3/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_3_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_3_pattern_2" registerevents type='pattern' url='./pattern/house_3/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_3_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_3_pattern_3" registerevents type='pattern' url='./pattern/house_3/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_3_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_4_pattern_1" registerevents type='pattern' url='./pattern/house_4/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_4_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_4_pattern_1" registerevents type='pattern' url='./pattern/house_4/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_4_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_4_pattern_3" registerevents type='pattern' url='./pattern/house_4/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_4_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_5_pattern_1" registerevents type='pattern' url='./pattern/house_5/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_5_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_6_pattern_1" registerevents type='pattern' url='./pattern/house_6/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_6_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_6_pattern_1" registerevents type='pattern' url='./pattern/house_6/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_6_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <!-- <a-marker registerevents type='pattern' url='./pattern/house_6/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_6_3"></a-video>
+      </a-entity>
+    </a-marker> -->
+
+    <a-marker id="house_7_pattern_1" registerevents type='pattern' url='./pattern/house_7/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_7_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_7_pattern_2" registerevents type='pattern' url='./pattern/house_7/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_7_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_7_pattern_3" registerevents type='pattern' url='./pattern/house_7/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_7_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_8_pattern_1" registerevents type='pattern' url='./pattern/house_8/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_8_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_8_pattern_2" registerevents type='pattern' url='./pattern/house_8/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_8_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_8_pattern_3" registerevents type='pattern' url='./pattern/house_8/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_8_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_8_pattern_4" registerevents type='pattern' url='./pattern/house_8/4.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_8_4"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_9_pattern_1" registerevents type='pattern' url='./pattern/house_9/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_9_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_9_pattern_2" registerevents type='pattern' url='./pattern/house_9/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_9_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_9_pattern_3" registerevents type='pattern' url='./pattern/house_9/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_9_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_9_pattern_4" registerevents type='pattern' url='./pattern/house_9/4.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_9_4"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_10_pattern_1" registerevents type='pattern' url='./pattern/house_10/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_10_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_10_pattern_2" registerevents type='pattern' url='./pattern/house_10/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_10_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_11_pattern_1" registerevents type='pattern' url='./pattern/house_11/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_11_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_11_pattern_2" registerevents type='pattern' url='./pattern/house_11/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_11_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_11_pattern_3" registerevents type='pattern' url='./pattern/house_11/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_11_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_12_pattern_1" registerevents type='pattern' url='./pattern/house_12/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_12_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_12_pattern_2" registerevents type='pattern' url='./pattern/house_12/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_12_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_13_pattern_1" registerevents type='pattern' url='./pattern/house_13/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_13_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_14_pattern_1" registerevents type='pattern' url='./pattern/house_14/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_14_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_14_pattern_2" registerevents type='pattern' url='./pattern/house_14/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_14_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_15_pattern_1" registerevents type='pattern' url='./pattern/house_15/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_15_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_15_pattern_2" registerevents type='pattern' url='./pattern/house_15/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_15_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_15_pattern_3" registerevents type='pattern' url='./pattern/house_15/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_15_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_16_pattern_1" registerevents type='pattern' url='./pattern/house_16/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_16_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_16_pattern_2" registerevents type='pattern' url='./pattern/house_16/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_16_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+
+    <a-marker id="house_17_pattern_1" registerevents type='pattern' url='./pattern/house_17/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_17_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_17_pattern_2" registerevents type='pattern' url='./pattern/house_17/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_17_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_18_pattern_1" registerevents type='pattern' url='./pattern/house_18/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_18_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_18_pattern_2" registerevents type='pattern' url='./pattern/house_18/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_18_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_19_pattern_1" registerevents type='pattern' url='./pattern/house_19/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_19_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_19_pattern_2" registerevents type='pattern' url='./pattern/house_19/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_19_2"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_19_pattern_3" registerevents type='pattern' url='./pattern/house_19/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_19_3"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_19_pattern_4" registerevents type='pattern' url='./pattern/house_19/4.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_19_4"></a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-marker id="house_20_pattern_1" registerevents type='pattern' url='./pattern/house_20/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video muted src="#vid_house_20_1"></a-video>
+      </a-entity>
+    </a-marker>
+
+
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
+
+
